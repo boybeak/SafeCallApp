@@ -2,8 +2,8 @@ package com.hikingman.safecallapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import com.github.boybeak.safecall.enqueueSafetyWith
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,8 +18,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun go(v: View) {
-        api().getHotTopics(0, 15).onSuccess { _, response ->
-//            Log.v(TAG, "response.size=${response.body()!!.size}")
-        }.observe(this)
+        api().getHotTopics(0, 15)
+            .enqueueSafetyWith(this)
+            .onSuccess { call, response ->
+
+            }
+            .onFailure { call, t ->
+
+            }
     }
 }

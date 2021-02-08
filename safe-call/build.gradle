@@ -62,3 +62,5 @@ dokka {
         }
     }
 }
+
+apply from: 'deploy-safe-call.gradle'
