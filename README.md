@@ -11,5 +11,5 @@ allprojects {
 ```
 ```groovy
 implementation 'com.squareup.retrofit2:retrofit:$last_retrofit_version'
-implementation 'com.github.boybeak:safe-call:0.0.1'
+implementation 'com.github.boybeak:safe-call:$last_version'
 ```
