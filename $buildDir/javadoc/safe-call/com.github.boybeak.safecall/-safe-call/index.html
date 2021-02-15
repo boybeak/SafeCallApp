@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SafeCall - safe-call</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">safe-call</a>&nbsp;/&nbsp;<a href="../index.html">com.github.boybeak.safecall</a>&nbsp;/&nbsp;<a href="./index.html">SafeCall</a><br/>
+<br/>
+<h1>SafeCall</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SafeCall</span><span class="symbol">&lt;</span><span class="identifier">R</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">!</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">LifecycleEventObserver</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-on-cancel/index.html">OnCancel</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnCancel</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-on-complete/index.html">OnComplete</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnComplete</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-on-failure/index.html">OnFailure</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnFailure</span><span class="symbol">&lt;</span><span class="identifier">R</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">!</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-on-start/index.html">OnStart</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnStart</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-on-success/index.html">OnSuccess</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnSuccess</span><span class="symbol">&lt;</span><span class="identifier">R</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">!</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">SafeCall</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$<init>(retrofit2.Call((com.github.boybeak.safecall.SafeCall.R)))/call">call</span><span class="symbol">:</span>&nbsp;<span class="identifier">Call</span><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-executing.html">isExecuting</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isExecuting</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Boolean</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="observe.html">observe</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">observe</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$observe(androidx.lifecycle.LifecycleOwner)/owner">owner</span><span class="symbol">:</span>&nbsp;<span class="identifier">LifecycleOwner</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Unit</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-cancel.html">onCancel</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onCancel</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onCancel(com.github.boybeak.safecall.SafeCall.OnCancel)/onCancel">onCancel</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnCancel</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SafeCall</span></a><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-complete.html">onComplete</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onComplete</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onComplete(com.github.boybeak.safecall.SafeCall.OnComplete)/onComplete">onComplete</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnComplete</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SafeCall</span></a><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-failure.html">onFailure</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onFailure</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onFailure(com.github.boybeak.safecall.SafeCall.OnFailure((com.github.boybeak.safecall.SafeCall.R)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnFailure</span><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SafeCall</span></a><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-start.html">onStart</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStart</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onStart(com.github.boybeak.safecall.SafeCall.OnStart)/onStart">onStart</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnStart</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SafeCall</span></a><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-state-changed.html">onStateChanged</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStateChanged</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onStateChanged(androidx.lifecycle.LifecycleOwner, androidx.lifecycle.Lifecycle.Event)/source">source</span><span class="symbol">:</span>&nbsp;<span class="identifier">LifecycleOwner</span><span class="symbol">, </span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onStateChanged(androidx.lifecycle.LifecycleOwner, androidx.lifecycle.Lifecycle.Event)/event">event</span><span class="symbol">:</span>&nbsp;<span class="identifier">Event</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Unit</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-success.html">onSuccess</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onSuccess</span><span class="symbol">(</span><span class="identifier" id="com.github.boybeak.safecall.SafeCall$onSuccess(com.github.boybeak.safecall.SafeCall.OnSuccess((com.github.boybeak.safecall.SafeCall.R)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnSuccess</span><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SafeCall</span></a><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">!</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
