@@ -15,13 +15,19 @@ public class SafeCallAdapterFactory extends CallAdapter.Factory {
 
     private static final String TAG = SafeCallAdapterFactory.class.getSimpleName();
 
+    public static SafeCallAdapterFactory create() {
+        return new SafeCallAdapterFactory();
+    }
+
+    private SafeCallAdapterFactory(){}
+
     @Override
     public CallAdapter<?, ?> get(@NotNull Type returnType, @NotNull Annotation[] annotations, @NotNull Retrofit retrofit) {
         Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
         if (getRawType(returnType) != SafeCall.class) {
             return null;
         }
-        return new SafeCallAdapter<>(innerType);
+        return new SafeCallAdapter<>(innerType, retrofit.callbackExecutor());
     }
 
 }

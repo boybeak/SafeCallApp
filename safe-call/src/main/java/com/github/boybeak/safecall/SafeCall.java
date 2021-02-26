@@ -7,6 +7,8 @@ import androidx.lifecycle.LifecycleOwner;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.Executor;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,8 +27,11 @@ public class SafeCall<R> implements LifecycleEventObserver {
 
     private int state = STATE_IDLE;
 
-    public SafeCall(Call<R> call) {
+    private final Executor executor;
+
+    SafeCall(Call<R> call, Executor executor) {
         this.call = call;
+        this.executor = executor;
     }
 
     @Override
@@ -122,20 +127,24 @@ public class SafeCall<R> implements LifecycleEventObserver {
         call.enqueue(new Callback<R>() {
             @Override
             public void onResponse(@NotNull Call<R> call, @NotNull Response<R> response) {
-                if (onSuccess != null) {
-                    onSuccess.onResponse(call, response);
-                    onSuccess = null;
-                }
-                setState(STATE_END);
+                executor.execute(() -> {
+                    if (onSuccess != null) {
+                        onSuccess.onResponse(call, response);
+                        onSuccess = null;
+                    }
+                    setState(STATE_END);
+                });
             }
 
             @Override
             public void onFailure(@NotNull Call<R> call, @NotNull Throwable t) {
-                if (onFailure != null) {
-                    onFailure.onFailure(call, t);
-                    onFailure = null;
-                }
-                setState(STATE_END);
+                executor.execute(() -> {
+                    if (onFailure != null) {
+                        onFailure.onFailure(call, t);
+                        onFailure = null;
+                    }
+                    setState(STATE_END);
+                });
             }
         });
     }

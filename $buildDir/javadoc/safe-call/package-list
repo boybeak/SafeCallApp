@@ -1,4 +1,4 @@
 $dokka.format:html
 $dokka.linkExtension:html
-$dokka.location:com.github.boybeak.safecall$enqueueSafetyWith(retrofit2.Call((com.github.boybeak.safecall.enqueueSafetyWith.T)), androidx.lifecycle.LifecycleOwner)com.github.boybeak.safecall/retrofit2.-call/enqueue-safety-with.html
+
 com.github.boybeak.safecall
