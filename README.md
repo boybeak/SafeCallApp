@@ -9,6 +9,8 @@ allprojects {
     }
 }
 ```
+
+Retrofit[ ![Retrofit](https://api.bintray.com/packages/bintray/jcenter/com.squareup.retrofit2%3Aretrofit/images/download.svg) ](https://bintray.com/bintray/jcenter/com.squareup.retrofit2%3Aretrofit/_latestVersion)
 ```groovy
 implementation 'com.squareup.retrofit2:retrofit:$last_retrofit_version'
 implementation 'com.github.boybeak:safe-call:$last_version'
